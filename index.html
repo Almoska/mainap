@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boldog névnapot és nőnapot!</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffebf0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #e60073;
+            font-size: 3em;
+            margin-top: 15vh;
+        }
+        h2 {
+            color: #ff5733;
+            font-size: 2em;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Boldog névnapot, Zoltán! 🎉</h1>
+    <h1>És boldog nőnapot minden csodálatos nőnek! 💐</h1>
+    <script>
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            document.body.appendChild(confetti);
+            
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDuration = Math.random() * 2 + 3 + "s";
+            confetti.style.opacity = Math.random();
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+        
+        setInterval(createConfetti, 120);
+    </script>
+</body>
+</html>
