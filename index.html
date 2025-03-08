@@ -10,15 +10,25 @@
             background-color: #ffebf0;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1, h2 {
+            margin: 10px;
+            text-align: center;
         }
         h1 {
             color: #e60073;
-            font-size: 3em;
-            margin-top: 15vh;
+            font-size: 2.5em;
         }
         h2 {
             color: #ff5733;
-            font-size: 2em;
+            font-size: 1.8em;
         }
         .confetti {
             position: absolute;
@@ -31,6 +41,14 @@
         @keyframes fall {
             to {
                 transform: translateY(100vh);
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
             }
         }
     </style>
